@@ -1,9 +1,9 @@
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0,1'
 import torch
 import sys
 import argparse
-from models.repkpu import RepKPU, RepKPU_o
+from models.PointPAD import PointPAD, PointPAD_o
 from cfgs.upsampling import parse_pu1k_args, parse_pugan_o_args, parse_pugan_args
 from cfgs.utils import *
 from dataset.dataset import PUDataset
@@ -14,6 +14,8 @@ from einops import repeat
 from models.utils import *
 import time
 from datetime import datetime
+
+position_encoder = PosE_Initial(in_dim=3, out_dim=6, alpha=100.0, beta=500.0)
 
 def _normalize_point_cloud(pc):
     # b, n, 3
@@ -36,6 +38,19 @@ def upsampling(args, model, input_pcd):
     seed = FPS(input_pcd, sample_num)
     patches = extract_knn_patch(patch_pts_num, input_pcd, seed)
     patches, centroid, furthest_distance = normalize_point_cloud(patches)
+    # Added position features here
+    #position_encoded_patches = position_encoder(patches)
+    #coarse_pts, _= model.forward(patches, position_encoded_patches)
+
+    # position_encoded_patches = position_encoder(patches)
+    # position_encoded_patches = rearrange(position_encoded_patches, 'b c n -> b n c').contiguous().float().cuda()
+    # patches = rearrange(patches, 'b c n -> b n c').contiguous().float().cuda()
+    # position_encoded_patches = torch.cat((patches,position_encoded_patches ), dim=-1)
+    # position_encoded_patches = rearrange(position_encoded_patches, 'b n c -> b c n').contiguous().float().cuda()
+    # patches = rearrange(patches, 'b n c -> b c n').contiguous().float().cuda()
+    # coarse_pts, _= model.forward(patches, position_encoded_patches)
+
+
     coarse_pts, _= model.forward(patches)
     coarse_pts = coarse_pts
     coarse_pts = centroid + coarse_pts * furthest_distance
@@ -60,7 +75,10 @@ def test(model, args):
     with torch.no_grad():
         model.eval()
         test_input_path = glob(os.path.join(args.input_dir, '*.xyz'))
+
         total_cd = 0
+        total_dcd = 0
+        total_hd = 0
         counter = 0
         txt_result = []
         for i, path in enumerate(test_input_path):
@@ -90,10 +108,23 @@ def test(model, args):
             
             
             cd = chamfer_sqrt(pcd_upsampled.permute(0,2,1).contiguous(), gt).cpu().item()  
-            txt_result.append(f'{pcd_name}: {cd * 1e3}')    
+            dcd = get_dcd_loss(pcd_upsampled, gt, train=False)
+            #hd = hausdorff_distance_batch(pcd_upsampled.permute(0,2,1).contiguous(),gt)
+            
+
+            txt_result.append(f'{pcd_name}_cd: {cd * 1e3}') 
+            txt_result.append(f'{pcd_name}_dcd: {dcd}') 
+            #txt_result.append(f'{pcd_name}_hd: {hd}') 
+
+            #total_hd += hd
             total_cd += cd
+            total_dcd += dcd
             counter += 1.0
-        txt_result.append(f'overall: {total_cd/counter*1e3}')
+
+        txt_result.append(f'overall_cd: {total_cd/counter*1e3}')
+        txt_result.append(f'overall_dcd: {total_dcd/counter}')
+        #txt_result.append(f'overall_hd: {total_hd/counter}')
+
         with open(os.path.join(args.save_dir,'cd.txt'), "w") as f:
             for ll in txt_result:
                 f.writelines(ll+'\n')
@@ -105,6 +136,7 @@ def test_flexible(model, args):
         model.eval()
         test_input_path = glob(os.path.join(args.input_dir, '*.xyz'))
         total_cd = 0
+        total_dcd = 0
         counter = 0
         txt_result = []
         for i, path in enumerate(test_input_path):
@@ -139,10 +171,17 @@ def test_flexible(model, args):
             
             
             cd = chamfer_sqrt(pcd_upsampled.permute(0,2,1).contiguous(), gt).cpu().item()  
-            txt_result.append(f'{pcd_name}: {cd * 1e3}')    
+            dcd = get_dcd_loss(pcd_upsampled, gt, train=False)
+
+            txt_result.append(f'{pcd_name}: {cd * 1e3}') 
+            txt_result.append(f'{pcd_name}_dcd: {dcd}')
+
             total_cd += cd
+            total_dcd += dcd
             counter += 1.0
+
         txt_result.append(f'overall: {total_cd/counter*1e3}')
+        txt_result.append(f'overall_dcd: {total_dcd/counter}')
         with open(os.path.join(args.save_dir,'cd.txt'), "w") as f:
             for ll in txt_result:
                 f.writelines(ll+'\n')
@@ -164,13 +203,13 @@ if __name__ == '__main__':
     if args.dataset == 'pugan':
         if args.o:
             reset_model_args(parse_pugan_o_args(), args) 
-            model = RepKPU_o(args)
+            model = PointPAD_o(args)
         else:
             reset_model_args(parse_pugan_args(), args)
-            model = RepKPU(args)
+            model = PointPAD(args)
     else:
         reset_model_args(parse_pu1k_args(), args)
-        model = RepKPU(args)
+        model = PointPAD(args)
     
     model = model.cuda()
     model.load_state_dict(torch.load(args.ckpt))

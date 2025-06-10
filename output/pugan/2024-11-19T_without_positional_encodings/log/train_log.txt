@@ -1,0 +1,505 @@
+d[2024-11-19 21:56:32,315::train::INFO] Experiment ID: 2024-11-19T21:56:32.311763
+[2024-11-19 21:56:32,316::train::INFO] ========== Build Model ==========
+[2024-11-19 21:56:56,765::train::INFO] Namespace(batch_size=32, beta=0.01, ckpt='./pretrain/pugan_best.pth', conv_radius=0.8, data_augmentation=True, dataset='pugan', encoder_bn=True, encoder_dim=64, epochs=100, flexible=False, gamma=0.5, global_mlp=True, gt_dir='./data/PU-GAN/test_pointcloud/input_2048_4X/gt_8192/', h5_file_path='./data/PU-GAN/train/PUGAN_poisson_256_poisson_1024.h5', head_num=4, in_dim=64, input_dir='./data/PU-GAN/test_pointcloud/input_2048_4X/input_2048/', is_attn_bn=False, is_kp_bias=False, is_kp_bn=True, jitter_max=0.03, jitter_sigma=0.01, k=16, kernel_point_receptive_radius=0.2, kernel_radius=0.3, kp_dim=64, lr=0.001, lr_decay_step=20, neighbor_limits=30, num_kernel_points=15, num_points=256, num_workers=4, o=False, optim='adam', out_dim=64, out_path='./output/pugan', patch_rate=3, print_rate=200, query_scale=1.0, r=4, rigid_scale=0.625, save_dir='./result', save_rate=5, seed=21, simple=True, skip_rate=1, trans_dim=128, trans_num=2, up_rate=4, use_random_input=False, use_smooth_loss=False, weight_decay=0)
+[2024-11-19 21:56:56,765::train::INFO] ========== Begin Training ==========
+[2024-11-19 21:56:56,766::train::INFO] ********* Epoch 1 *********
+[2024-11-19 22:00:18,878::train::INFO] epoch: 1/100, iters: 200/750, loss: 6.871385
+[2024-11-19 22:03:35,325::train::INFO] epoch: 1/100, iters: 400/750, loss: 6.283275
+[2024-11-19 22:06:49,999::train::INFO] epoch: 1/100, iters: 600/750, loss: 5.964805
+[2024-11-19 22:09:18,889::train::INFO] epoch: 1/100, avg epoch loss: 5.826226, cd_last: 0.287673, cd_best: 0.287673, time: 13 mins 5.0 secs
+[2024-11-19 22:09:18,891::train::INFO] ********* Epoch 2 *********
+[2024-11-19 22:12:33,748::train::INFO] epoch: 2/100, iters: 200/750, loss: 5.216627
+[2024-11-19 22:15:48,913::train::INFO] epoch: 2/100, iters: 400/750, loss: 5.208922
+[2024-11-19 22:19:05,547::train::INFO] epoch: 2/100, iters: 600/750, loss: 5.179763
+[2024-11-19 22:21:42,778::train::INFO] epoch: 2/100, avg epoch loss: 5.150412, cd_last: 0.281305, cd_best: 0.281305, time: 25 mins 28.7 secs
+[2024-11-19 22:21:42,780::train::INFO] ********* Epoch 3 *********
+[2024-11-19 22:24:57,858::train::INFO] epoch: 3/100, iters: 200/750, loss: 4.976108
+[2024-11-19 22:28:15,173::train::INFO] epoch: 3/100, iters: 400/750, loss: 4.961161
+[2024-11-19 22:31:27,562::train::INFO] epoch: 3/100, iters: 600/750, loss: 4.956699
+[2024-11-19 22:34:04,355::train::INFO] epoch: 3/100, avg epoch loss: 4.948084, cd_last: 0.262035, cd_best: 0.262035, time: 37 mins 50.1 secs
+[2024-11-19 22:34:04,357::train::INFO] ********* Epoch 4 *********
+[2024-11-19 22:37:23,029::train::INFO] epoch: 4/100, iters: 200/750, loss: 4.905260
+[2024-11-19 22:40:38,264::train::INFO] epoch: 4/100, iters: 400/750, loss: 4.910202
+[2024-11-19 22:43:39,008::train::INFO] epoch: 4/100, iters: 600/750, loss: 4.908342
+[2024-11-19 22:46:06,085::train::INFO] epoch: 4/100, avg epoch loss: 4.899579, cd_last: 0.261438, cd_best: 0.261438, time: 49 mins 53.9 secs
+[2024-11-19 22:46:06,087::train::INFO] ********* Epoch 5 *********
+[2024-11-19 22:48:33,733::train::INFO] epoch: 5/100, iters: 200/750, loss: 4.869759
+[2024-11-19 22:51:02,405::train::INFO] epoch: 5/100, iters: 400/750, loss: 4.867904
+[2024-11-19 22:53:32,297::train::INFO] epoch: 5/100, iters: 600/750, loss: 4.861528
+[2024-11-19 22:55:31,599::train::INFO] epoch: 5/100, avg epoch loss: 4.861994, cd_last: 0.269806, cd_best: 0.261438, time: 59 mins 19.6 secs
+[2024-11-19 22:55:31,601::train::INFO] ********* Epoch 6 *********
+[2024-11-19 22:58:00,617::train::INFO] epoch: 6/100, iters: 200/750, loss: 4.831743
+[2024-11-19 23:00:28,608::train::INFO] epoch: 6/100, iters: 400/750, loss: 4.832460
+[2024-11-19 23:03:09,083::train::INFO] epoch: 6/100, iters: 600/750, loss: 4.832665
+[2024-11-19 23:04:57,504::train::INFO] epoch: 6/100, avg epoch loss: 4.834295, cd_last: 0.259412, cd_best: 0.259412, time: 68 mins 45.4 secs
+[2024-11-19 23:04:57,506::train::INFO] ********* Epoch 7 *********
+[2024-11-19 23:07:15,493::train::INFO] epoch: 7/100, iters: 200/750, loss: 4.839368
+[2024-11-19 23:09:44,638::train::INFO] epoch: 7/100, iters: 400/750, loss: 4.824111
+[2024-11-19 23:11:40,276::train::INFO] epoch: 7/100, iters: 600/750, loss: 4.819691
+[2024-11-19 23:13:11,899::train::INFO] epoch: 7/100, avg epoch loss: 4.817688, cd_last: 0.262157, cd_best: 0.259412, time: 77 mins 1.4 secs
+[2024-11-19 23:13:11,901::train::INFO] ********* Epoch 8 *********
+[2024-11-19 23:15:04,717::train::INFO] epoch: 8/100, iters: 200/750, loss: 4.803046
+[2024-11-19 23:16:55,642::train::INFO] epoch: 8/100, iters: 400/750, loss: 4.798633
+[2024-11-19 23:18:48,412::train::INFO] epoch: 8/100, iters: 600/750, loss: 4.803770
+[2024-11-19 23:20:19,434::train::INFO] epoch: 8/100, avg epoch loss: 4.801272, cd_last: 0.256971, cd_best: 0.256971, time: 84 mins 8.5 secs
+[2024-11-19 23:20:19,436::train::INFO] ********* Epoch 9 *********
+[2024-11-19 23:22:13,153::train::INFO] epoch: 9/100, iters: 200/750, loss: 4.772598
+[2024-11-19 23:24:05,723::train::INFO] epoch: 9/100, iters: 400/750, loss: 4.782617
+[2024-11-19 23:26:04,470::train::INFO] epoch: 9/100, iters: 600/750, loss: 4.781941
+[2024-11-19 23:27:50,970::train::INFO] epoch: 9/100, avg epoch loss: 4.780687, cd_last: 0.263606, cd_best: 0.256971, time: 91 mins 38.8 secs
+[2024-11-19 23:27:50,972::train::INFO] ********* Epoch 10 *********
+[2024-11-19 23:30:17,944::train::INFO] epoch: 10/100, iters: 200/750, loss: 4.753904
+[2024-11-19 23:32:49,739::train::INFO] epoch: 10/100, iters: 400/750, loss: 4.764976
+[2024-11-19 23:35:20,575::train::INFO] epoch: 10/100, iters: 600/750, loss: 4.766309
+[2024-11-19 23:37:22,146::train::INFO] epoch: 10/100, avg epoch loss: 4.770312, cd_last: 0.259955, cd_best: 0.256971, time: 101 mins 10.1 secs
+[2024-11-19 23:37:22,147::train::INFO] ********* Epoch 11 *********
+[2024-11-19 23:39:54,699::train::INFO] epoch: 11/100, iters: 200/750, loss: 4.762900
+[2024-11-19 23:42:27,485::train::INFO] epoch: 11/100, iters: 400/750, loss: 4.753315
+[2024-11-19 23:44:58,755::train::INFO] epoch: 11/100, iters: 600/750, loss: 4.759725
+[2024-11-19 23:47:00,100::train::INFO] epoch: 11/100, avg epoch loss: 4.755950, cd_last: 0.251400, cd_best: 0.251400, time: 110 mins 48.0 secs
+[2024-11-19 23:47:00,102::train::INFO] ********* Epoch 12 *********
+[2024-11-19 23:50:02,043::train::INFO] epoch: 12/100, iters: 200/750, loss: 4.765541
+[2024-11-19 23:52:32,946::train::INFO] epoch: 12/100, iters: 400/750, loss: 4.759914
+[2024-11-19 23:56:11,714::train::INFO] epoch: 12/100, iters: 600/750, loss: 4.758050
+[2024-11-19 23:58:41,252::train::INFO] epoch: 12/100, avg epoch loss: 4.763717, cd_last: 0.262032, cd_best: 0.251400, time: 122 mins 29.1 secs
+[2024-11-19 23:58:41,255::train::INFO] ********* Epoch 13 *********
+[2024-11-20 00:01:09,744::train::INFO] epoch: 13/100, iters: 200/750, loss: 4.752576
+[2024-11-20 00:03:40,858::train::INFO] epoch: 13/100, iters: 400/750, loss: 4.745446
+[2024-11-20 00:06:11,460::train::INFO] epoch: 13/100, iters: 600/750, loss: 4.742516
+[2024-11-20 00:08:12,637::train::INFO] epoch: 13/100, avg epoch loss: 4.741281, cd_last: 0.254897, cd_best: 0.251400, time: 132 mins 0.4 secs
+[2024-11-20 00:08:12,639::train::INFO] ********* Epoch 14 *********
+[2024-11-20 00:10:45,205::train::INFO] epoch: 14/100, iters: 200/750, loss: 4.713179
+[2024-11-20 00:14:28,047::train::INFO] epoch: 14/100, iters: 400/750, loss: 4.712513
+[2024-11-20 00:18:12,622::train::INFO] epoch: 14/100, iters: 600/750, loss: 4.726294
+[2024-11-20 00:21:11,864::train::INFO] epoch: 14/100, avg epoch loss: 4.726744, cd_last: 0.260293, cd_best: 0.251400, time: 144 mins 57.5 secs
+[2024-11-20 00:21:11,866::train::INFO] ********* Epoch 15 *********
+[2024-11-20 00:24:59,979::train::INFO] epoch: 15/100, iters: 200/750, loss: 4.748231
+[2024-11-20 00:28:44,778::train::INFO] epoch: 15/100, iters: 400/750, loss: 4.734813
+[2024-11-20 00:32:24,290::train::INFO] epoch: 15/100, iters: 600/750, loss: 4.725976
+[2024-11-20 00:35:23,456::train::INFO] epoch: 15/100, avg epoch loss: 4.721226, cd_last: 0.252115, cd_best: 0.251400, time: 159 mins 8.4 secs
+[2024-11-20 00:35:23,458::train::INFO] ********* Epoch 16 *********
+[2024-11-20 00:39:09,406::train::INFO] epoch: 16/100, iters: 200/750, loss: 4.699509
+[2024-11-20 00:42:55,450::train::INFO] epoch: 16/100, iters: 400/750, loss: 4.699371
+[2024-11-20 00:46:40,699::train::INFO] epoch: 16/100, iters: 600/750, loss: 4.701339
+[2024-11-20 00:49:41,003::train::INFO] epoch: 16/100, avg epoch loss: 4.702127, cd_last: 0.252240, cd_best: 0.251400, time: 173 mins 26.1 secs
+[2024-11-20 00:49:41,004::train::INFO] ********* Epoch 17 *********
+[2024-11-20 00:53:28,296::train::INFO] epoch: 17/100, iters: 200/750, loss: 4.710182
+[2024-11-20 00:57:13,364::train::INFO] epoch: 17/100, iters: 400/750, loss: 4.716981
+[2024-11-20 01:00:58,502::train::INFO] epoch: 17/100, iters: 600/750, loss: 4.712867
+[2024-11-20 01:03:56,449::train::INFO] epoch: 17/100, avg epoch loss: 4.707152, cd_last: 0.249182, cd_best: 0.249182, time: 187 mins 41.4 secs
+[2024-11-20 01:03:56,451::train::INFO] ********* Epoch 18 *********
+[2024-11-20 01:07:42,259::train::INFO] epoch: 18/100, iters: 200/750, loss: 4.706257
+[2024-11-20 01:11:28,406::train::INFO] epoch: 18/100, iters: 400/750, loss: 4.685764
+[2024-11-20 01:15:13,450::train::INFO] epoch: 18/100, iters: 600/750, loss: 4.687424
+[2024-11-20 01:18:13,244::train::INFO] epoch: 18/100, avg epoch loss: 4.691110, cd_last: 0.257990, cd_best: 0.249182, time: 201 mins 58.6 secs
+[2024-11-20 01:18:13,246::train::INFO] ********* Epoch 19 *********
+[2024-11-20 01:21:59,497::train::INFO] epoch: 19/100, iters: 200/750, loss: 4.697399
+[2024-11-20 01:25:45,253::train::INFO] epoch: 19/100, iters: 400/750, loss: 4.700871
+[2024-11-20 01:29:30,988::train::INFO] epoch: 19/100, iters: 600/750, loss: 4.697801
+[2024-11-20 01:32:27,953::train::INFO] epoch: 19/100, avg epoch loss: 4.694071, cd_last: 0.249804, cd_best: 0.249182, time: 216 mins 13.3 secs
+[2024-11-20 01:32:27,955::train::INFO] ********* Epoch 20 *********
+[2024-11-20 01:36:15,139::train::INFO] epoch: 20/100, iters: 200/750, loss: 4.684831
+[2024-11-20 01:39:59,987::train::INFO] epoch: 20/100, iters: 400/750, loss: 4.678089
+[2024-11-20 01:43:44,249::train::INFO] epoch: 20/100, iters: 600/750, loss: 4.678720
+[2024-11-20 01:46:45,414::train::INFO] epoch: 20/100, avg epoch loss: 4.678391, cd_last: 0.249971, cd_best: 0.249182, time: 230 mins 30.5 secs
+[2024-11-20 01:46:45,415::train::INFO] ********* Epoch 21 *********
+[2024-11-20 01:50:30,521::train::INFO] epoch: 21/100, iters: 200/750, loss: 4.674157
+[2024-11-20 01:54:11,327::train::INFO] epoch: 21/100, iters: 400/750, loss: 4.678404
+[2024-11-20 01:57:56,187::train::INFO] epoch: 21/100, iters: 600/750, loss: 4.679278
+[2024-11-20 02:00:57,010::train::INFO] epoch: 21/100, avg epoch loss: 4.677059, cd_last: 0.249416, cd_best: 0.249182, time: 244 mins 41.9 secs
+[2024-11-20 02:00:57,011::train::INFO] ********* Epoch 22 *********
+[2024-11-20 02:04:42,158::train::INFO] epoch: 22/100, iters: 200/750, loss: 4.678339
+[2024-11-20 02:08:27,527::train::INFO] epoch: 22/100, iters: 400/750, loss: 4.673454
+[2024-11-20 02:12:13,727::train::INFO] epoch: 22/100, iters: 600/750, loss: 4.668621
+[2024-11-20 02:15:13,945::train::INFO] epoch: 22/100, avg epoch loss: 4.665677, cd_last: 0.255598, cd_best: 0.249182, time: 258 mins 59.5 secs
+[2024-11-20 02:15:13,947::train::INFO] ********* Epoch 23 *********
+[2024-11-20 02:19:00,479::train::INFO] epoch: 23/100, iters: 200/750, loss: 4.679872
+[2024-11-20 02:22:46,158::train::INFO] epoch: 23/100, iters: 400/750, loss: 4.664548
+[2024-11-20 02:26:32,097::train::INFO] epoch: 23/100, iters: 600/750, loss: 4.667522
+[2024-11-20 02:29:31,630::train::INFO] epoch: 23/100, avg epoch loss: 4.670570, cd_last: 0.249054, cd_best: 0.249054, time: 273 mins 16.6 secs
+[2024-11-20 02:29:31,632::train::INFO] ********* Epoch 24 *********
+[2024-11-20 02:33:14,293::train::INFO] epoch: 24/100, iters: 200/750, loss: 4.679258
+[2024-11-20 02:36:59,795::train::INFO] epoch: 24/100, iters: 400/750, loss: 4.665363
+[2024-11-20 02:40:43,918::train::INFO] epoch: 24/100, iters: 600/750, loss: 4.662818
+[2024-11-20 02:43:43,838::train::INFO] epoch: 24/100, avg epoch loss: 4.663618, cd_last: 0.244544, cd_best: 0.244544, time: 287 mins 28.8 secs
+[2024-11-20 02:43:43,840::train::INFO] ********* Epoch 25 *********
+[2024-11-20 02:47:29,467::train::INFO] epoch: 25/100, iters: 200/750, loss: 4.671456
+[2024-11-20 02:51:14,209::train::INFO] epoch: 25/100, iters: 400/750, loss: 4.661118
+[2024-11-20 02:54:59,370::train::INFO] epoch: 25/100, iters: 600/750, loss: 4.659216
+[2024-11-20 02:58:00,215::train::INFO] epoch: 25/100, avg epoch loss: 4.655176, cd_last: 0.246219, cd_best: 0.244544, time: 301 mins 45.3 secs
+[2024-11-20 02:58:00,217::train::INFO] ********* Epoch 26 *********
+[2024-11-20 03:01:45,720::train::INFO] epoch: 26/100, iters: 200/750, loss: 4.652593
+[2024-11-20 03:05:29,334::train::INFO] epoch: 26/100, iters: 400/750, loss: 4.644983
+[2024-11-20 03:09:12,562::train::INFO] epoch: 26/100, iters: 600/750, loss: 4.652915
+[2024-11-20 03:12:10,440::train::INFO] epoch: 26/100, avg epoch loss: 4.656423, cd_last: 0.248666, cd_best: 0.244544, time: 315 mins 55.4 secs
+[2024-11-20 03:12:10,441::train::INFO] ********* Epoch 27 *********
+[2024-11-20 03:15:56,375::train::INFO] epoch: 27/100, iters: 200/750, loss: 4.644539
+[2024-11-20 03:19:41,204::train::INFO] epoch: 27/100, iters: 400/750, loss: 4.650147
+[2024-11-20 03:23:26,342::train::INFO] epoch: 27/100, iters: 600/750, loss: 4.654260
+[2024-11-20 03:26:25,811::train::INFO] epoch: 27/100, avg epoch loss: 4.657044, cd_last: 0.246843, cd_best: 0.244544, time: 330 mins 10.7 secs
+[2024-11-20 03:26:25,812::train::INFO] ********* Epoch 28 *********
+[2024-11-20 03:30:12,363::train::INFO] epoch: 28/100, iters: 200/750, loss: 4.657103
+[2024-11-20 03:33:53,831::train::INFO] epoch: 28/100, iters: 400/750, loss: 4.655751
+[2024-11-20 03:37:39,809::train::INFO] epoch: 28/100, iters: 600/750, loss: 4.656044
+[2024-11-20 03:40:39,115::train::INFO] epoch: 28/100, avg epoch loss: 4.656654, cd_last: 0.248355, cd_best: 0.244544, time: 344 mins 24.1 secs
+[2024-11-20 03:40:39,116::train::INFO] ********* Epoch 29 *********
+[2024-11-20 03:44:24,756::train::INFO] epoch: 29/100, iters: 200/750, loss: 4.651569
+[2024-11-20 03:47:53,626::train::INFO] epoch: 29/100, iters: 400/750, loss: 4.659841
+[2024-11-20 03:51:37,091::train::INFO] epoch: 29/100, iters: 600/750, loss: 4.654061
+[2024-11-20 03:54:35,563::train::INFO] epoch: 29/100, avg epoch loss: 4.652764, cd_last: 0.247380, cd_best: 0.244544, time: 358 mins 20.6 secs
+[2024-11-20 03:54:35,565::train::INFO] ********* Epoch 30 *********
+[2024-11-20 03:58:18,851::train::INFO] epoch: 30/100, iters: 200/750, loss: 4.632952
+[2024-11-20 04:02:03,112::train::INFO] epoch: 30/100, iters: 400/750, loss: 4.643976
+[2024-11-20 04:05:44,133::train::INFO] epoch: 30/100, iters: 600/750, loss: 4.641720
+[2024-11-20 04:08:42,471::train::INFO] epoch: 30/100, avg epoch loss: 4.646484, cd_last: 0.244892, cd_best: 0.244544, time: 372 mins 27.5 secs
+[2024-11-20 04:08:42,473::train::INFO] ********* Epoch 31 *********
+[2024-11-20 04:12:28,591::train::INFO] epoch: 31/100, iters: 200/750, loss: 4.642789
+[2024-11-20 04:16:12,962::train::INFO] epoch: 31/100, iters: 400/750, loss: 4.642713
+[2024-11-20 04:19:57,773::train::INFO] epoch: 31/100, iters: 600/750, loss: 4.643560
+[2024-11-20 04:22:56,540::train::INFO] epoch: 31/100, avg epoch loss: 4.644184, cd_last: 0.246833, cd_best: 0.244544, time: 386 mins 41.5 secs
+[2024-11-20 04:22:56,541::train::INFO] ********* Epoch 32 *********
+[2024-11-20 04:26:40,918::train::INFO] epoch: 32/100, iters: 200/750, loss: 4.679799
+[2024-11-20 04:30:19,484::train::INFO] epoch: 32/100, iters: 400/750, loss: 4.653809
+[2024-11-20 04:33:58,550::train::INFO] epoch: 32/100, iters: 600/750, loss: 4.650580
+[2024-11-20 04:36:51,580::train::INFO] epoch: 32/100, avg epoch loss: 4.650823, cd_last: 0.244077, cd_best: 0.244077, time: 400 mins 36.7 secs
+[2024-11-20 04:36:51,581::train::INFO] ********* Epoch 33 *********
+[2024-11-20 04:40:09,712::train::INFO] epoch: 33/100, iters: 200/750, loss: 4.637738
+[2024-11-20 04:43:23,546::train::INFO] epoch: 33/100, iters: 400/750, loss: 4.629269
+[2024-11-20 04:46:38,880::train::INFO] epoch: 33/100, iters: 600/750, loss: 4.630793
+[2024-11-20 04:49:22,222::train::INFO] epoch: 33/100, avg epoch loss: 4.635935, cd_last: 0.251848, cd_best: 0.244077, time: 413 mins 7.7 secs
+[2024-11-20 04:49:22,223::train::INFO] ********* Epoch 34 *********
+[2024-11-20 04:53:06,941::train::INFO] epoch: 34/100, iters: 200/750, loss: 4.656650
+[2024-11-20 04:56:50,664::train::INFO] epoch: 34/100, iters: 400/750, loss: 4.653351
+[2024-11-20 05:00:35,496::train::INFO] epoch: 34/100, iters: 600/750, loss: 4.650120
+[2024-11-20 05:03:34,281::train::INFO] epoch: 34/100, avg epoch loss: 4.643426, cd_last: 0.243403, cd_best: 0.243403, time: 427 mins 19.6 secs
+[2024-11-20 05:03:34,282::train::INFO] ********* Epoch 35 *********
+[2024-11-20 05:07:18,198::train::INFO] epoch: 35/100, iters: 200/750, loss: 4.632959
+[2024-11-20 05:11:03,195::train::INFO] epoch: 35/100, iters: 400/750, loss: 4.626839
+[2024-11-20 05:14:45,770::train::INFO] epoch: 35/100, iters: 600/750, loss: 4.623439
+[2024-11-20 05:17:45,963::train::INFO] epoch: 35/100, avg epoch loss: 4.623659, cd_last: 0.246944, cd_best: 0.243403, time: 441 mins 31.0 secs
+[2024-11-20 05:17:45,964::train::INFO] ********* Epoch 36 *********
+[2024-11-20 05:21:31,680::train::INFO] epoch: 36/100, iters: 200/750, loss: 4.617289
+[2024-11-20 05:25:14,967::train::INFO] epoch: 36/100, iters: 400/750, loss: 4.608592
+[2024-11-20 05:28:58,190::train::INFO] epoch: 36/100, iters: 600/750, loss: 4.616462
+[2024-11-20 05:31:55,612::train::INFO] epoch: 36/100, avg epoch loss: 4.621831, cd_last: 0.245334, cd_best: 0.243403, time: 455 mins 41.3 secs
+[2024-11-20 05:31:55,614::train::INFO] ********* Epoch 37 *********
+[2024-11-20 05:35:38,231::train::INFO] epoch: 37/100, iters: 200/750, loss: 4.632335
+[2024-11-20 05:39:18,891::train::INFO] epoch: 37/100, iters: 400/750, loss: 4.638410
+[2024-11-20 05:42:59,775::train::INFO] epoch: 37/100, iters: 600/750, loss: 4.640626
+[2024-11-20 05:45:57,332::train::INFO] epoch: 37/100, avg epoch loss: 4.639853, cd_last: 0.252357, cd_best: 0.243403, time: 469 mins 42.3 secs
+[2024-11-20 05:45:57,334::train::INFO] ********* Epoch 38 *********
+[2024-11-20 05:49:40,795::train::INFO] epoch: 38/100, iters: 200/750, loss: 4.629613
+[2024-11-20 05:53:22,449::train::INFO] epoch: 38/100, iters: 400/750, loss: 4.632285
+[2024-11-20 05:57:04,026::train::INFO] epoch: 38/100, iters: 600/750, loss: 4.632025
+[2024-11-20 06:00:00,715::train::INFO] epoch: 38/100, avg epoch loss: 4.628130, cd_last: 0.244048, cd_best: 0.243403, time: 483 mins 46.5 secs
+[2024-11-20 06:00:00,716::train::INFO] ********* Epoch 39 *********
+[2024-11-20 06:03:42,738::train::INFO] epoch: 39/100, iters: 200/750, loss: 4.621476
+[2024-11-20 06:07:23,137::train::INFO] epoch: 39/100, iters: 400/750, loss: 4.621982
+[2024-11-20 06:11:01,441::train::INFO] epoch: 39/100, iters: 600/750, loss: 4.618754
+[2024-11-20 06:13:58,376::train::INFO] epoch: 39/100, avg epoch loss: 4.619750, cd_last: 0.246070, cd_best: 0.243403, time: 497 mins 43.5 secs
+[2024-11-20 06:13:58,377::train::INFO] ********* Epoch 40 *********
+[2024-11-20 06:17:41,082::train::INFO] epoch: 40/100, iters: 200/750, loss: 4.615618
+[2024-11-20 06:21:22,493::train::INFO] epoch: 40/100, iters: 400/750, loss: 4.614647
+[2024-11-20 06:25:04,897::train::INFO] epoch: 40/100, iters: 600/750, loss: 4.620562
+[2024-11-20 06:28:01,018::train::INFO] epoch: 40/100, avg epoch loss: 4.617712, cd_last: 0.246020, cd_best: 0.243403, time: 511 mins 46.2 secs
+[2024-11-20 06:28:01,020::train::INFO] ********* Epoch 41 *********
+[2024-11-20 06:31:43,161::train::INFO] epoch: 41/100, iters: 200/750, loss: 4.615657
+[2024-11-20 06:35:23,190::train::INFO] epoch: 41/100, iters: 400/750, loss: 4.611955
+[2024-11-20 06:39:01,239::train::INFO] epoch: 41/100, iters: 600/750, loss: 4.622076
+[2024-11-20 06:41:56,151::train::INFO] epoch: 41/100, avg epoch loss: 4.623398, cd_last: 0.245529, cd_best: 0.243403, time: 525 mins 41.2 secs
+[2024-11-20 06:41:56,152::train::INFO] ********* Epoch 42 *********
+[2024-11-20 06:45:36,335::train::INFO] epoch: 42/100, iters: 200/750, loss: 4.626831
+[2024-11-20 06:49:16,325::train::INFO] epoch: 42/100, iters: 400/750, loss: 4.620957
+[2024-11-20 06:52:56,380::train::INFO] epoch: 42/100, iters: 600/750, loss: 4.618273
+[2024-11-20 06:55:51,962::train::INFO] epoch: 42/100, avg epoch loss: 4.617173, cd_last: 0.247471, cd_best: 0.243403, time: 539 mins 37.6 secs
+[2024-11-20 06:55:51,964::train::INFO] ********* Epoch 43 *********
+[2024-11-20 06:59:32,255::train::INFO] epoch: 43/100, iters: 200/750, loss: 4.624726
+[2024-11-20 07:03:11,508::train::INFO] epoch: 43/100, iters: 400/750, loss: 4.618408
+[2024-11-20 07:06:50,554::train::INFO] epoch: 43/100, iters: 600/750, loss: 4.611945
+[2024-11-20 07:09:44,664::train::INFO] epoch: 43/100, avg epoch loss: 4.612610, cd_last: 0.250485, cd_best: 0.243403, time: 553 mins 29.8 secs
+[2024-11-20 07:09:44,665::train::INFO] ********* Epoch 44 *********
+[2024-11-20 07:13:25,970::train::INFO] epoch: 44/100, iters: 200/750, loss: 4.624294
+[2024-11-20 07:17:05,476::train::INFO] epoch: 44/100, iters: 400/750, loss: 4.619337
+[2024-11-20 07:20:45,965::train::INFO] epoch: 44/100, iters: 600/750, loss: 4.620774
+[2024-11-20 07:23:43,123::train::INFO] epoch: 44/100, avg epoch loss: 4.621309, cd_last: 0.247735, cd_best: 0.243403, time: 567 mins 28.5 secs
+[2024-11-20 07:23:43,124::train::INFO] ********* Epoch 45 *********
+[2024-11-20 07:27:22,758::train::INFO] epoch: 45/100, iters: 200/750, loss: 4.610164
+[2024-11-20 07:31:05,472::train::INFO] epoch: 45/100, iters: 400/750, loss: 4.615021
+[2024-11-20 07:34:47,229::train::INFO] epoch: 45/100, iters: 600/750, loss: 4.609740
+[2024-11-20 07:37:45,513::train::INFO] epoch: 45/100, avg epoch loss: 4.607191, cd_last: 0.251145, cd_best: 0.243403, time: 581 mins 30.6 secs
+[2024-11-20 07:37:45,514::train::INFO] ********* Epoch 46 *********
+[2024-11-20 07:41:26,951::train::INFO] epoch: 46/100, iters: 200/750, loss: 4.604027
+[2024-11-20 07:45:07,602::train::INFO] epoch: 46/100, iters: 400/750, loss: 4.603538
+[2024-11-20 07:48:50,025::train::INFO] epoch: 46/100, iters: 600/750, loss: 4.607581
+[2024-11-20 07:51:47,289::train::INFO] epoch: 46/100, avg epoch loss: 4.608767, cd_last: 0.244477, cd_best: 0.243403, time: 595 mins 32.5 secs
+[2024-11-20 07:51:47,291::train::INFO] ********* Epoch 47 *********
+[2024-11-20 07:55:29,323::train::INFO] epoch: 47/100, iters: 200/750, loss: 4.596816
+[2024-11-20 07:59:12,445::train::INFO] epoch: 47/100, iters: 400/750, loss: 4.595784
+[2024-11-20 08:02:52,655::train::INFO] epoch: 47/100, iters: 600/750, loss: 4.599848
+[2024-11-20 08:05:50,174::train::INFO] epoch: 47/100, avg epoch loss: 4.604939, cd_last: 0.245371, cd_best: 0.243403, time: 609 mins 35.2 secs
+[2024-11-20 08:05:50,176::train::INFO] ********* Epoch 48 *********
+[2024-11-20 08:09:33,698::train::INFO] epoch: 48/100, iters: 200/750, loss: 4.597942
+[2024-11-20 08:12:34,247::train::INFO] epoch: 48/100, iters: 400/750, loss: 4.603576
+[2024-11-20 08:15:00,060::train::INFO] epoch: 48/100, iters: 600/750, loss: 4.597264
+[2024-11-20 08:16:58,426::train::INFO] epoch: 48/100, avg epoch loss: 4.602328, cd_last: 0.242482, cd_best: 0.242482, time: 620 mins 46.3 secs
+[2024-11-20 08:16:58,427::train::INFO] ********* Epoch 49 *********
+[2024-11-20 08:19:24,932::train::INFO] epoch: 49/100, iters: 200/750, loss: 4.620196
+[2024-11-20 08:21:51,218::train::INFO] epoch: 49/100, iters: 400/750, loss: 4.617111
+[2024-11-20 08:24:16,157::train::INFO] epoch: 49/100, iters: 600/750, loss: 4.617344
+[2024-11-20 08:26:13,340::train::INFO] epoch: 49/100, avg epoch loss: 4.611693, cd_last: 0.241907, cd_best: 0.241907, time: 630 mins 1.1 secs
+[2024-11-20 08:26:13,341::train::INFO] ********* Epoch 50 *********
+[2024-11-20 08:28:42,547::train::INFO] epoch: 50/100, iters: 200/750, loss: 4.612021
+[2024-11-20 08:31:18,198::train::INFO] epoch: 50/100, iters: 400/750, loss: 4.616024
+[2024-11-20 08:33:46,891::train::INFO] epoch: 50/100, iters: 600/750, loss: 4.609339
+[2024-11-20 08:35:49,070::train::INFO] epoch: 50/100, avg epoch loss: 4.608748, cd_last: 0.249955, cd_best: 0.241907, time: 639 mins 36.9 secs
+[2024-11-20 08:35:49,072::train::INFO] ********* Epoch 51 *********
+[2024-11-20 08:38:24,153::train::INFO] epoch: 51/100, iters: 200/750, loss: 4.588217
+[2024-11-20 08:40:55,023::train::INFO] epoch: 51/100, iters: 400/750, loss: 4.589268
+[2024-11-20 08:43:27,675::train::INFO] epoch: 51/100, iters: 600/750, loss: 4.589031
+[2024-11-20 08:45:31,508::train::INFO] epoch: 51/100, avg epoch loss: 4.592568, cd_last: 0.244298, cd_best: 0.241907, time: 649 mins 19.3 secs
+[2024-11-20 08:45:31,510::train::INFO] ********* Epoch 52 *********
+[2024-11-20 08:48:05,240::train::INFO] epoch: 52/100, iters: 200/750, loss: 4.596316
+[2024-11-20 08:50:39,610::train::INFO] epoch: 52/100, iters: 400/750, loss: 4.605770
+[2024-11-20 08:53:13,036::train::INFO] epoch: 52/100, iters: 600/750, loss: 4.599567
+[2024-11-20 08:55:16,046::train::INFO] epoch: 52/100, avg epoch loss: 4.602335, cd_last: 0.247940, cd_best: 0.241907, time: 659 mins 3.9 secs
+[2024-11-20 08:55:16,048::train::INFO] ********* Epoch 53 *********
+[2024-11-20 08:57:49,880::train::INFO] epoch: 53/100, iters: 200/750, loss: 4.589210
+[2024-11-20 09:00:24,336::train::INFO] epoch: 53/100, iters: 400/750, loss: 4.605598
+[2024-11-20 09:02:57,613::train::INFO] epoch: 53/100, iters: 600/750, loss: 4.606062
+[2024-11-20 09:05:00,281::train::INFO] epoch: 53/100, avg epoch loss: 4.602710, cd_last: 0.249658, cd_best: 0.241907, time: 668 mins 48.2 secs
+[2024-11-20 09:05:00,282::train::INFO] ********* Epoch 54 *********
+[2024-11-20 09:07:32,006::train::INFO] epoch: 54/100, iters: 200/750, loss: 4.583776
+[2024-11-20 09:10:04,870::train::INFO] epoch: 54/100, iters: 400/750, loss: 4.586747
+[2024-11-20 09:12:34,231::train::INFO] epoch: 54/100, iters: 600/750, loss: 4.589793
+[2024-11-20 09:14:37,181::train::INFO] epoch: 54/100, avg epoch loss: 4.594099, cd_last: 0.252314, cd_best: 0.241907, time: 678 mins 24.9 secs
+[2024-11-20 09:14:37,182::train::INFO] ********* Epoch 55 *********
+[2024-11-20 09:17:11,542::train::INFO] epoch: 55/100, iters: 200/750, loss: 4.590070
+[2024-11-20 09:19:46,473::train::INFO] epoch: 55/100, iters: 400/750, loss: 4.591324
+[2024-11-20 09:22:21,188::train::INFO] epoch: 55/100, iters: 600/750, loss: 4.593788
+[2024-11-20 09:24:24,507::train::INFO] epoch: 55/100, avg epoch loss: 4.590304, cd_last: 0.245557, cd_best: 0.241907, time: 688 mins 12.3 secs
+[2024-11-20 09:24:24,510::train::INFO] ********* Epoch 56 *********
+[2024-11-20 09:26:57,419::train::INFO] epoch: 56/100, iters: 200/750, loss: 4.585745
+[2024-11-20 09:29:27,930::train::INFO] epoch: 56/100, iters: 400/750, loss: 4.587850
+[2024-11-20 09:31:57,445::train::INFO] epoch: 56/100, iters: 600/750, loss: 4.589438
+[2024-11-20 09:33:57,421::train::INFO] epoch: 56/100, avg epoch loss: 4.588223, cd_last: 0.247297, cd_best: 0.241907, time: 697 mins 45.3 secs
+[2024-11-20 09:33:57,423::train::INFO] ********* Epoch 57 *********
+[2024-11-20 09:36:27,828::train::INFO] epoch: 57/100, iters: 200/750, loss: 4.598204
+[2024-11-20 09:38:48,765::train::INFO] epoch: 57/100, iters: 400/750, loss: 4.591594
+[2024-11-20 09:40:58,862::train::INFO] epoch: 57/100, iters: 600/750, loss: 4.587549
+[2024-11-20 09:42:42,591::train::INFO] epoch: 57/100, avg epoch loss: 4.585471, cd_last: 0.251586, cd_best: 0.241907, time: 706 mins 30.9 secs
+[2024-11-20 09:42:42,593::train::INFO] ********* Epoch 58 *********
+[2024-11-20 09:44:43,503::train::INFO] epoch: 58/100, iters: 200/750, loss: 4.576679
+[2024-11-20 09:46:58,225::train::INFO] epoch: 58/100, iters: 400/750, loss: 4.587944
+[2024-11-20 09:49:27,926::train::INFO] epoch: 58/100, iters: 600/750, loss: 4.593092
+[2024-11-20 09:51:28,735::train::INFO] epoch: 58/100, avg epoch loss: 4.591053, cd_last: 0.251236, cd_best: 0.241907, time: 715 mins 16.7 secs
+[2024-11-20 09:51:28,737::train::INFO] ********* Epoch 59 *********
+[2024-11-20 09:53:58,946::train::INFO] epoch: 59/100, iters: 200/750, loss: 4.571480
+[2024-11-20 09:56:29,102::train::INFO] epoch: 59/100, iters: 400/750, loss: 4.584122
+[2024-11-20 09:58:58,098::train::INFO] epoch: 59/100, iters: 600/750, loss: 4.579516
+[2024-11-20 10:00:58,588::train::INFO] epoch: 59/100, avg epoch loss: 4.583064, cd_last: 0.250671, cd_best: 0.241907, time: 724 mins 46.3 secs
+[2024-11-20 10:00:58,590::train::INFO] ********* Epoch 60 *********
+[2024-11-20 10:03:30,390::train::INFO] epoch: 60/100, iters: 200/750, loss: 4.578096
+[2024-11-20 10:05:59,077::train::INFO] epoch: 60/100, iters: 400/750, loss: 4.587869
+[2024-11-20 10:08:28,109::train::INFO] epoch: 60/100, iters: 600/750, loss: 4.588403
+[2024-11-20 10:10:26,203::train::INFO] epoch: 60/100, avg epoch loss: 4.584978, cd_last: 0.248588, cd_best: 0.241907, time: 734 mins 14.1 secs
+[2024-11-20 10:10:26,204::train::INFO] ********* Epoch 61 *********
+[2024-11-20 10:12:54,092::train::INFO] epoch: 61/100, iters: 200/750, loss: 4.591539
+[2024-11-20 10:15:13,364::train::INFO] epoch: 61/100, iters: 400/750, loss: 4.596132
+[2024-11-20 10:17:40,478::train::INFO] epoch: 61/100, iters: 600/750, loss: 4.593765
+[2024-11-20 10:19:38,124::train::INFO] epoch: 61/100, avg epoch loss: 4.589682, cd_last: 0.249541, cd_best: 0.241907, time: 743 mins 25.9 secs
+[2024-11-20 10:19:38,125::train::INFO] ********* Epoch 62 *********
+[2024-11-20 10:22:07,371::train::INFO] epoch: 62/100, iters: 200/750, loss: 4.571536
+[2024-11-20 10:24:38,336::train::INFO] epoch: 62/100, iters: 400/750, loss: 4.572368
+[2024-11-20 10:27:09,796::train::INFO] epoch: 62/100, iters: 600/750, loss: 4.578399
+[2024-11-20 10:29:12,788::train::INFO] epoch: 62/100, avg epoch loss: 4.579516, cd_last: 0.251699, cd_best: 0.241907, time: 753 mins 0.6 secs
+[2024-11-20 10:29:12,790::train::INFO] ********* Epoch 63 *********
+[2024-11-20 10:31:47,484::train::INFO] epoch: 63/100, iters: 200/750, loss: 4.572926
+[2024-11-20 10:34:18,921::train::INFO] epoch: 63/100, iters: 400/750, loss: 4.578125
+[2024-11-20 10:36:48,556::train::INFO] epoch: 63/100, iters: 600/750, loss: 4.587125
+[2024-11-20 10:38:49,766::train::INFO] epoch: 63/100, avg epoch loss: 4.580176, cd_last: 0.248164, cd_best: 0.241907, time: 762 mins 37.5 secs
+[2024-11-20 10:38:49,768::train::INFO] ********* Epoch 64 *********
+[2024-11-20 10:41:20,363::train::INFO] epoch: 64/100, iters: 200/750, loss: 4.590190
+[2024-11-20 10:43:41,224::train::INFO] epoch: 64/100, iters: 400/750, loss: 4.592597
+[2024-11-20 10:46:10,375::train::INFO] epoch: 64/100, iters: 600/750, loss: 4.593194
+[2024-11-20 10:48:11,283::train::INFO] epoch: 64/100, avg epoch loss: 4.585901, cd_last: 0.248792, cd_best: 0.241907, time: 771 mins 59.1 secs
+[2024-11-20 10:48:11,284::train::INFO] ********* Epoch 65 *********
+[2024-11-20 10:50:38,335::train::INFO] epoch: 65/100, iters: 200/750, loss: 4.591039
+[2024-11-20 10:53:05,457::train::INFO] epoch: 65/100, iters: 400/750, loss: 4.588297
+[2024-11-20 10:55:44,811::train::INFO] epoch: 65/100, iters: 600/750, loss: 4.585353
+[2024-11-20 10:57:41,443::train::INFO] epoch: 65/100, avg epoch loss: 4.585939, cd_last: 0.247699, cd_best: 0.241907, time: 781 mins 28.8 secs
+[2024-11-20 10:57:41,444::train::INFO] ********* Epoch 66 *********
+[2024-11-20 11:00:16,096::train::INFO] epoch: 66/100, iters: 200/750, loss: 4.575604
+[2024-11-20 11:02:54,058::train::INFO] epoch: 66/100, iters: 400/750, loss: 4.584143
+[2024-11-20 11:05:09,907::train::INFO] epoch: 66/100, iters: 600/750, loss: 4.576040
+[2024-11-20 11:07:09,947::train::INFO] epoch: 66/100, avg epoch loss: 4.581266, cd_last: 0.249745, cd_best: 0.241907, time: 790 mins 58.4 secs
+[2024-11-20 11:07:09,949::train::INFO] ********* Epoch 67 *********
+[2024-11-20 11:09:43,218::train::INFO] epoch: 67/100, iters: 200/750, loss: 4.561590
+[2024-11-20 11:12:14,343::train::INFO] epoch: 67/100, iters: 400/750, loss: 4.571558
+[2024-11-20 11:14:40,086::train::INFO] epoch: 67/100, iters: 600/750, loss: 4.580381
+[2024-11-20 11:16:43,561::train::INFO] epoch: 67/100, avg epoch loss: 4.580313, cd_last: 0.252259, cd_best: 0.241907, time: 800 mins 30.9 secs
+[2024-11-20 11:16:43,563::train::INFO] ********* Epoch 68 *********
+[2024-11-20 11:19:19,269::train::INFO] epoch: 68/100, iters: 200/750, loss: 4.583943
+[2024-11-20 11:21:59,999::train::INFO] epoch: 68/100, iters: 400/750, loss: 4.577079
+[2024-11-20 11:24:25,406::train::INFO] epoch: 68/100, iters: 600/750, loss: 4.579216
+[2024-11-20 11:26:35,946::train::INFO] epoch: 68/100, avg epoch loss: 4.579227, cd_last: 0.249170, cd_best: 0.241907, time: 810 mins 22.2 secs
+[2024-11-20 11:26:35,949::train::INFO] ********* Epoch 69 *********
+[2024-11-20 11:29:52,980::train::INFO] epoch: 69/100, iters: 200/750, loss: 4.570631
+[2024-11-20 11:33:14,333::train::INFO] epoch: 69/100, iters: 400/750, loss: 4.580425
+[2024-11-20 11:36:39,348::train::INFO] epoch: 69/100, iters: 600/750, loss: 4.583562
+[2024-11-20 11:39:22,438::train::INFO] epoch: 69/100, avg epoch loss: 4.579935, cd_last: 0.248097, cd_best: 0.241907, time: 823 mins 8.6 secs
+[2024-11-20 11:39:22,440::train::INFO] ********* Epoch 70 *********
+[2024-11-20 11:42:51,482::train::INFO] epoch: 70/100, iters: 200/750, loss: 4.586782
+[2024-11-20 11:46:38,018::train::INFO] epoch: 70/100, iters: 400/750, loss: 4.578390
+[2024-11-20 11:50:43,040::train::INFO] epoch: 70/100, iters: 600/750, loss: 4.580742
+[2024-11-20 11:53:57,547::train::INFO] epoch: 70/100, avg epoch loss: 4.577823, cd_last: 0.250460, cd_best: 0.241907, time: 837 mins 42.1 secs
+[2024-11-20 11:53:57,549::train::INFO] ********* Epoch 71 *********
+[2024-11-20 11:58:02,141::train::INFO] epoch: 71/100, iters: 200/750, loss: 4.592963
+[2024-11-20 12:02:07,547::train::INFO] epoch: 71/100, iters: 400/750, loss: 4.578711
+[2024-11-20 12:05:56,922::train::INFO] epoch: 71/100, iters: 600/750, loss: 4.575572
+[2024-11-20 12:08:35,163::train::INFO] epoch: 71/100, avg epoch loss: 4.577518, cd_last: 0.251296, cd_best: 0.241907, time: 852 mins 21.0 secs
+[2024-11-20 12:08:35,165::train::INFO] ********* Epoch 72 *********
+[2024-11-20 12:10:30,637::train::INFO] epoch: 72/100, iters: 200/750, loss: 4.581389
+[2024-11-20 12:12:21,751::train::INFO] epoch: 72/100, iters: 400/750, loss: 4.575789
+[2024-11-20 12:14:14,506::train::INFO] epoch: 72/100, iters: 600/750, loss: 4.571361
+[2024-11-20 12:15:45,053::train::INFO] epoch: 72/100, avg epoch loss: 4.570929, cd_last: 0.250515, cd_best: 0.241907, time: 859 mins 34.0 secs
+[2024-11-20 12:15:45,055::train::INFO] ********* Epoch 73 *********
+[2024-11-20 12:17:34,108::train::INFO] epoch: 73/100, iters: 200/750, loss: 4.587244
+[2024-11-20 12:19:24,413::train::INFO] epoch: 73/100, iters: 400/750, loss: 4.582436
+[2024-11-20 12:21:06,103::train::INFO] epoch: 73/100, iters: 600/750, loss: 4.572806
+[2024-11-20 12:22:28,247::train::INFO] epoch: 73/100, avg epoch loss: 4.572018, cd_last: 0.247680, cd_best: 0.241907, time: 866 mins 17.4 secs
+[2024-11-20 12:22:28,248::train::INFO] ********* Epoch 74 *********
+[2024-11-20 12:24:10,387::train::INFO] epoch: 74/100, iters: 200/750, loss: 4.578561
+[2024-11-20 12:25:52,635::train::INFO] epoch: 74/100, iters: 400/750, loss: 4.575254
+[2024-11-20 12:27:33,959::train::INFO] epoch: 74/100, iters: 600/750, loss: 4.577029
+[2024-11-20 12:28:56,439::train::INFO] epoch: 74/100, avg epoch loss: 4.575750, cd_last: 0.249019, cd_best: 0.241907, time: 872 mins 45.6 secs
+[2024-11-20 12:28:56,441::train::INFO] ********* Epoch 75 *********
+[2024-11-20 12:30:40,207::train::INFO] epoch: 75/100, iters: 200/750, loss: 4.574030
+[2024-11-20 12:32:21,616::train::INFO] epoch: 75/100, iters: 400/750, loss: 4.572519
+[2024-11-20 12:34:20,876::train::INFO] epoch: 75/100, iters: 600/750, loss: 4.571144
+[2024-11-20 12:36:00,615::train::INFO] epoch: 75/100, avg epoch loss: 4.576995, cd_last: 0.246648, cd_best: 0.241907, time: 879 mins 49.4 secs
+[2024-11-20 12:36:00,617::train::INFO] ********* Epoch 76 *********
+[2024-11-20 12:38:04,331::train::INFO] epoch: 76/100, iters: 200/750, loss: 4.580000
+[2024-11-20 12:40:05,087::train::INFO] epoch: 76/100, iters: 400/750, loss: 4.574839
+[2024-11-20 12:42:07,588::train::INFO] epoch: 76/100, iters: 600/750, loss: 4.571962
+[2024-11-20 12:43:46,734::train::INFO] epoch: 76/100, avg epoch loss: 4.573038, cd_last: 0.251482, cd_best: 0.241907, time: 887 mins 35.5 secs
+[2024-11-20 12:43:46,735::train::INFO] ********* Epoch 77 *********
+[2024-11-20 12:45:52,462::train::INFO] epoch: 77/100, iters: 200/750, loss: 4.570473
+[2024-11-20 12:47:56,127::train::INFO] epoch: 77/100, iters: 400/750, loss: 4.574093
+[2024-11-20 12:49:53,477::train::INFO] epoch: 77/100, iters: 600/750, loss: 4.568059
+[2024-11-20 12:51:33,992::train::INFO] epoch: 77/100, avg epoch loss: 4.566978, cd_last: 0.246961, cd_best: 0.241907, time: 895 mins 22.8 secs
+[2024-11-20 12:51:33,994::train::INFO] ********* Epoch 78 *********
+[2024-11-20 12:53:38,693::train::INFO] epoch: 78/100, iters: 200/750, loss: 4.566801
+[2024-11-20 12:55:42,050::train::INFO] epoch: 78/100, iters: 400/750, loss: 4.577546
+[2024-11-20 12:57:44,192::train::INFO] epoch: 78/100, iters: 600/750, loss: 4.572490
+[2024-11-20 12:59:24,180::train::INFO] epoch: 78/100, avg epoch loss: 4.569418, cd_last: 0.244456, cd_best: 0.241907, time: 903 mins 13.0 secs
+[2024-11-20 12:59:24,181::train::INFO] ********* Epoch 79 *********
+[2024-11-20 13:01:28,894::train::INFO] epoch: 79/100, iters: 200/750, loss: 4.582535
+[2024-11-20 13:03:33,054::train::INFO] epoch: 79/100, iters: 400/750, loss: 4.580650
+[2024-11-20 13:05:34,929::train::INFO] epoch: 79/100, iters: 600/750, loss: 4.571864
+[2024-11-20 13:07:14,739::train::INFO] epoch: 79/100, avg epoch loss: 4.567797, cd_last: 0.250132, cd_best: 0.241907, time: 911 mins 3.5 secs
+[2024-11-20 13:07:14,741::train::INFO] ********* Epoch 80 *********
+[2024-11-20 13:09:20,788::train::INFO] epoch: 80/100, iters: 200/750, loss: 4.555527
+[2024-11-20 13:11:25,575::train::INFO] epoch: 80/100, iters: 400/750, loss: 4.562435
+[2024-11-20 13:13:26,714::train::INFO] epoch: 80/100, iters: 600/750, loss: 4.564286
+[2024-11-20 13:15:06,178::train::INFO] epoch: 80/100, avg epoch loss: 4.562941, cd_last: 0.245093, cd_best: 0.241907, time: 918 mins 54.9 secs
+[2024-11-20 13:15:06,179::train::INFO] ********* Epoch 81 *********
+[2024-11-20 13:17:09,894::train::INFO] epoch: 81/100, iters: 200/750, loss: 4.565418
+[2024-11-20 13:19:13,462::train::INFO] epoch: 81/100, iters: 400/750, loss: 4.564941
+[2024-11-20 13:21:10,033::train::INFO] epoch: 81/100, iters: 600/750, loss: 4.562012
+[2024-11-20 13:23:01,252::train::INFO] epoch: 81/100, avg epoch loss: 4.563713, cd_last: 0.248489, cd_best: 0.241907, time: 926 mins 47.6 secs
+[2024-11-20 13:23:01,256::train::INFO] ********* Epoch 82 *********
+[2024-11-20 13:25:34,161::train::INFO] epoch: 82/100, iters: 200/750, loss: 4.569427
+[2024-11-20 13:27:41,174::train::INFO] epoch: 82/100, iters: 400/750, loss: 4.558650
+[2024-11-20 13:29:50,492::train::INFO] epoch: 82/100, iters: 600/750, loss: 4.559727
+[2024-11-20 13:31:30,135::train::INFO] epoch: 82/100, avg epoch loss: 4.561076, cd_last: 0.245563, cd_best: 0.241907, time: 935 mins 18.9 secs
+[2024-11-20 13:31:30,136::train::INFO] ********* Epoch 83 *********
+[2024-11-20 13:33:35,073::train::INFO] epoch: 83/100, iters: 200/750, loss: 4.576068
+[2024-11-20 13:35:40,824::train::INFO] epoch: 83/100, iters: 400/750, loss: 4.565868
+[2024-11-20 13:37:44,733::train::INFO] epoch: 83/100, iters: 600/750, loss: 4.563127
+[2024-11-20 13:39:24,482::train::INFO] epoch: 83/100, avg epoch loss: 4.561432, cd_last: 0.250851, cd_best: 0.241907, time: 943 mins 13.3 secs
+[2024-11-20 13:39:24,483::train::INFO] ********* Epoch 84 *********
+[2024-11-20 13:41:28,610::train::INFO] epoch: 84/100, iters: 200/750, loss: 4.580799
+[2024-11-20 13:43:30,206::train::INFO] epoch: 84/100, iters: 400/750, loss: 4.574653
+[2024-11-20 13:45:33,137::train::INFO] epoch: 84/100, iters: 600/750, loss: 4.567082
+[2024-11-20 13:47:12,925::train::INFO] epoch: 84/100, avg epoch loss: 4.564095, cd_last: 0.248829, cd_best: 0.241907, time: 951 mins 1.7 secs
+[2024-11-20 13:47:12,927::train::INFO] ********* Epoch 85 *********
+[2024-11-20 13:49:19,008::train::INFO] epoch: 85/100, iters: 200/750, loss: 4.560257
+[2024-11-20 13:51:18,586::train::INFO] epoch: 85/100, iters: 400/750, loss: 4.559238
+[2024-11-20 13:53:21,944::train::INFO] epoch: 85/100, iters: 600/750, loss: 4.552844
+[2024-11-20 13:55:01,808::train::INFO] epoch: 85/100, avg epoch loss: 4.559775, cd_last: 0.248812, cd_best: 0.241907, time: 958 mins 50.6 secs
+[2024-11-20 13:55:01,809::train::INFO] ********* Epoch 86 *********
+[2024-11-20 13:57:06,853::train::INFO] epoch: 86/100, iters: 200/750, loss: 4.548812
+[2024-11-20 13:59:10,102::train::INFO] epoch: 86/100, iters: 400/750, loss: 4.555683
+[2024-11-20 14:01:34,862::train::INFO] epoch: 86/100, iters: 600/750, loss: 4.554116
+[2024-11-20 14:03:41,843::train::INFO] epoch: 86/100, avg epoch loss: 4.557860, cd_last: 0.248315, cd_best: 0.241907, time: 967 mins 29.3 secs
+[2024-11-20 14:03:41,844::train::INFO] ********* Epoch 87 *********
+[2024-11-20 14:05:51,848::train::INFO] epoch: 87/100, iters: 200/750, loss: 4.557213
+[2024-11-20 14:07:54,226::train::INFO] epoch: 87/100, iters: 400/750, loss: 4.555873
+[2024-11-20 14:10:23,622::train::INFO] epoch: 87/100, iters: 600/750, loss: 4.555915
+[2024-11-20 14:12:30,669::train::INFO] epoch: 87/100, avg epoch loss: 4.557452, cd_last: 0.244688, cd_best: 0.241907, time: 976 mins 18.2 secs
+[2024-11-20 14:12:30,671::train::INFO] ********* Epoch 88 *********
+[2024-11-20 14:15:14,071::train::INFO] epoch: 88/100, iters: 200/750, loss: 4.552040
+[2024-11-20 14:17:59,507::train::INFO] epoch: 88/100, iters: 400/750, loss: 4.555209
+[2024-11-20 14:20:42,182::train::INFO] epoch: 88/100, iters: 600/750, loss: 4.554451
+[2024-11-20 14:22:53,539::train::INFO] epoch: 88/100, avg epoch loss: 4.554823, cd_last: 0.248027, cd_best: 0.241907, time: 986 mins 40.8 secs
+[2024-11-20 14:22:53,541::train::INFO] ********* Epoch 89 *********
+[2024-11-20 14:25:58,999::train::INFO] epoch: 89/100, iters: 200/750, loss: 4.542108
+[2024-11-20 14:29:20,819::train::INFO] epoch: 89/100, iters: 400/750, loss: 4.553676
+[2024-11-20 14:32:41,825::train::INFO] epoch: 89/100, iters: 600/750, loss: 4.559308
+[2024-11-20 14:35:24,215::train::INFO] epoch: 89/100, avg epoch loss: 4.555655, cd_last: 0.252251, cd_best: 0.241907, time: 999 mins 10.0 secs
+[2024-11-20 14:35:24,216::train::INFO] ********* Epoch 90 *********
+[2024-11-20 14:38:47,670::train::INFO] epoch: 90/100, iters: 200/750, loss: 4.558856
+[2024-11-20 14:42:12,132::train::INFO] epoch: 90/100, iters: 400/750, loss: 4.557508
+[2024-11-20 14:45:36,370::train::INFO] epoch: 90/100, iters: 600/750, loss: 4.556908
+[2024-11-20 14:48:18,340::train::INFO] epoch: 90/100, avg epoch loss: 4.557644, cd_last: 0.249541, cd_best: 0.241907, time: 1012 mins 4.7 secs
+[2024-11-20 14:48:18,341::train::INFO] ********* Epoch 91 *********
+[2024-11-20 14:51:42,943::train::INFO] epoch: 91/100, iters: 200/750, loss: 4.549120
+[2024-11-20 14:54:19,457::train::INFO] epoch: 91/100, iters: 400/750, loss: 4.551673
+[2024-11-20 14:56:23,471::train::INFO] epoch: 91/100, iters: 600/750, loss: 4.554851
+[2024-11-20 14:58:04,717::train::INFO] epoch: 91/100, avg epoch loss: 4.552468, cd_last: 0.245623, cd_best: 0.241907, time: 1021 mins 53.4 secs
+[2024-11-20 14:58:04,719::train::INFO] ********* Epoch 92 *********
+[2024-11-20 15:00:11,140::train::INFO] epoch: 92/100, iters: 200/750, loss: 4.550452
+[2024-11-20 15:02:15,922::train::INFO] epoch: 92/100, iters: 400/750, loss: 4.553584
+[2024-11-20 15:04:17,883::train::INFO] epoch: 92/100, iters: 600/750, loss: 4.551653
+[2024-11-20 15:05:57,874::train::INFO] epoch: 92/100, avg epoch loss: 4.551535, cd_last: 0.245430, cd_best: 0.241907, time: 1029 mins 46.7 secs
+[2024-11-20 15:05:57,875::train::INFO] ********* Epoch 93 *********
+[2024-11-20 15:08:02,647::train::INFO] epoch: 93/100, iters: 200/750, loss: 4.554311
+[2024-11-20 15:10:06,483::train::INFO] epoch: 93/100, iters: 400/750, loss: 4.552615
+[2024-11-20 15:12:10,002::train::INFO] epoch: 93/100, iters: 600/750, loss: 4.547203
+[2024-11-20 15:13:50,691::train::INFO] epoch: 93/100, avg epoch loss: 4.549098, cd_last: 0.249095, cd_best: 0.241907, time: 1037 mins 39.5 secs
+[2024-11-20 15:13:50,692::train::INFO] ********* Epoch 94 *********
+[2024-11-20 15:15:55,253::train::INFO] epoch: 94/100, iters: 200/750, loss: 4.550844
+[2024-11-20 15:17:59,793::train::INFO] epoch: 94/100, iters: 400/750, loss: 4.560078
+[2024-11-20 15:20:04,334::train::INFO] epoch: 94/100, iters: 600/750, loss: 4.557711
+[2024-11-20 15:21:45,312::train::INFO] epoch: 94/100, avg epoch loss: 4.560991, cd_last: 0.248536, cd_best: 0.241907, time: 1045 mins 33.9 secs
+[2024-11-20 15:21:45,313::train::INFO] ********* Epoch 95 *********
+[2024-11-20 15:23:56,393::train::INFO] epoch: 95/100, iters: 200/750, loss: 4.558555
+[2024-11-20 15:26:02,743::train::INFO] epoch: 95/100, iters: 400/750, loss: 4.551375
+[2024-11-20 15:28:18,255::train::INFO] epoch: 95/100, iters: 600/750, loss: 4.554299
+[2024-11-20 15:30:24,901::train::INFO] epoch: 95/100, avg epoch loss: 4.551350, cd_last: 0.242274, cd_best: 0.241907, time: 1054 mins 12.7 secs
+[2024-11-20 15:30:24,903::train::INFO] ********* Epoch 96 *********
+[2024-11-20 15:32:57,252::train::INFO] epoch: 96/100, iters: 200/750, loss: 4.549687
+[2024-11-20 15:35:31,066::train::INFO] epoch: 96/100, iters: 400/750, loss: 4.556588
+[2024-11-20 15:38:06,516::train::INFO] epoch: 96/100, iters: 600/750, loss: 4.559335
+[2024-11-20 15:40:12,249::train::INFO] epoch: 96/100, avg epoch loss: 4.551152, cd_last: 0.251684, cd_best: 0.241907, time: 1063 mins 59.7 secs
+[2024-11-20 15:40:12,251::train::INFO] ********* Epoch 97 *********
+[2024-11-20 15:42:50,351::train::INFO] epoch: 97/100, iters: 200/750, loss: 4.543703
+[2024-11-20 15:45:58,195::train::INFO] epoch: 97/100, iters: 400/750, loss: 4.557997
+[2024-11-20 15:49:12,043::train::INFO] epoch: 97/100, iters: 600/750, loss: 4.548541
+[2024-11-20 15:51:45,511::train::INFO] epoch: 97/100, avg epoch loss: 4.549578, cd_last: 0.247436, cd_best: 0.241907, time: 1075 mins 32.4 secs
+[2024-11-20 15:51:45,512::train::INFO] ********* Epoch 98 *********
+[2024-11-20 15:55:00,512::train::INFO] epoch: 98/100, iters: 200/750, loss: 4.563858
+[2024-11-20 15:58:10,837::train::INFO] epoch: 98/100, iters: 400/750, loss: 4.551456
+[2024-11-20 16:01:23,739::train::INFO] epoch: 98/100, iters: 600/750, loss: 4.556477
+[2024-11-20 16:03:59,247::train::INFO] epoch: 98/100, avg epoch loss: 4.553529, cd_last: 0.246188, cd_best: 0.241907, time: 1087 mins 45.1 secs
+[2024-11-20 16:03:59,249::train::INFO] ********* Epoch 99 *********
+[2024-11-20 16:07:14,371::train::INFO] epoch: 99/100, iters: 200/750, loss: 4.555787
+[2024-11-20 16:10:27,974::train::INFO] epoch: 99/100, iters: 400/750, loss: 4.553004
+[2024-11-20 16:13:43,530::train::INFO] epoch: 99/100, iters: 600/750, loss: 4.555079
+[2024-11-20 16:16:21,187::train::INFO] epoch: 99/100, avg epoch loss: 4.550104, cd_last: 0.249074, cd_best: 0.241907, time: 1100 mins 6.6 secs
+[2024-11-20 16:16:21,189::train::INFO] ********* Epoch 100 *********
+[2024-11-20 16:19:38,370::train::INFO] epoch: 100/100, iters: 200/750, loss: 4.554624
+[2024-11-20 16:22:53,792::train::INFO] epoch: 100/100, iters: 400/750, loss: 4.562677
+[2024-11-20 16:26:43,815::train::INFO] epoch: 100/100, iters: 600/750, loss: 4.560106
+[2024-11-20 16:29:51,531::train::INFO] epoch: 100/100, avg epoch loss: 4.555688, cd_last: 0.251932, cd_best: 0.241907, time: 1113 mins 36.5 secs
+                                                                     

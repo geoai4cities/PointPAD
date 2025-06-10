@@ -3,7 +3,7 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 import torch
 import sys
 import argparse
-from models.repkpu import RepKPU
+from models.PointPAD import PointPAD, PointPAD_o
 from cfgs.upsampling import parse_pu1k_args, parse_pugan_o_args, parse_pugan_args
 from cfgs.utils import *
 from dataset.dataset import PUDataset
@@ -14,8 +14,9 @@ from einops import repeat
 from models.utils import *
 import time
 from datetime import datetime
+import sys
 
-
+position_encoder = PosE_Initial(in_dim=3, out_dim=6, alpha=100.0, beta=500.0)
 
 def _normalize_point_cloud(pc):
     # b, n, 3
@@ -38,6 +39,16 @@ def upsampling(args, model, input_pcd):
     seed = FPS(input_pcd, sample_num)
     patches = extract_knn_patch(patch_pts_num, input_pcd, seed)
     patches, centroid, furthest_distance = normalize_point_cloud(patches)
+
+    # Added position features here
+    #position_encoded_patches = position_encoder(patches)
+    # position_encoded_patches = rearrange(position_encoded_patches, 'b c n -> b n c').contiguous().float().cuda()
+    # patches = rearrange(patches, 'b c n -> b n c').contiguous().float().cuda()
+    # position_encoded_patches = torch.cat((patches,position_encoded_patches ), dim=-1)
+    # position_encoded_patches = rearrange(position_encoded_patches, 'b n c -> b c n').contiguous().float().cuda()
+    # patches = rearrange(patches, 'b n c -> b c n').contiguous().float().cuda()
+    #coarse_pts, _= model.forward(patches,position_encoded_patches)
+
     coarse_pts, _= model.forward(patches)
     coarse_pts = coarse_pts
     coarse_pts = centroid + coarse_pts * furthest_distance
@@ -94,8 +105,7 @@ def train(model, args):
     logger.info(args)
     logger.info('========== Begin Training ==========')
     best_cd = 10000
-    
-    
+        
     for epoch in range(args.epochs):
         model.train()
         logger.info('********* Epoch %d *********' % (epoch + 1))
@@ -103,10 +113,23 @@ def train(model, args):
         epoch_loss = 0.0
         for i, (input_pts, gt_pts, radius) in enumerate(train_loader):
             # (b, n, 3) -> (b, 3, n)
+            
             input_pts = rearrange(input_pts, 'b n c -> b c n').contiguous().float().cuda()
             gt_pts = rearrange(gt_pts, 'b n c -> b c n').contiguous().float().cuda()
-            gen_pts, reg_loss = model.forward(input_pts)
-            loss = get_cd_loss(args, gen_pts, gt_pts)
+
+            # This the new transformed features. We transform them using POSE features
+            #position_encoded_input = position_encoder(input_pts)
+            # position_encoded_input= rearrange(position_encoded_input, 'b c n -> b n c').contiguous().float().cuda()
+            # input_pts = rearrange(input_pts, 'b c n -> b n c').contiguous().float().cuda()
+            # position_encoded_input = torch.cat((input_pts, position_encoded_input), dim=-1)
+            # position_encoded_input = rearrange(position_encoded_input, 'b n c -> b c n').contiguous().float().cuda()
+
+            # input_pts = rearrange(input_pts, 'b n c -> b c n').contiguous().float().cuda()
+            gen_pts, reg_loss = model.forward(input_pts)#, position_encoded_input)
+            #gen_pts, reg_loss = model.forward(input_pts, position_encoded_input)
+            #loss = get_cd_loss(args, gen_pts, gt_pts)
+            loss = get_dcd_loss(gen_pts, gt_pts)
+            loss = loss * 10
             if reg_loss != None:
                 loss_all = loss + reg_loss
             else:
@@ -141,6 +164,7 @@ def train(model, args):
         
 
 def val(model, args):
+
     with torch.no_grad():
         model.eval()
         test_input_path = glob(os.path.join(args.input_dir, '*.xyz'))
@@ -157,7 +181,6 @@ def val(model, args):
             input_pcd = rearrange(input_pcd, 'n c -> c n').contiguous()
             input_pcd = input_pcd.unsqueeze(0)
             input_pcd, centroid, furthest_distance = normalize_point_cloud(input_pcd)
-
             pcd_upsampled = upsampling(args, model, input_pcd)
             pcd_upsampled = centroid + pcd_upsampled * furthest_distance
 
@@ -165,7 +188,7 @@ def val(model, args):
                 
             total_cd += cd
             counter += 1.0
-       
+        print(counter)
     return total_cd/counter*1e3
 
 if __name__ == '__main__':
@@ -178,5 +201,5 @@ if __name__ == '__main__':
         reset_model_args(parse_pugan_args(), args)
     
     # 
-    model = RepKPU(args)
+    model = PointPAD(args)
     train(model, args)

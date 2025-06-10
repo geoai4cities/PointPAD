@@ -1,0 +1,20 @@
+# ninja log v5
+3	8714	1737616639485449517	/data2/vaibhav/sameer/RepKPU/models/pointops/build/temp.linux-x86_64-3.6/src/grouping_int/grouping_int_cuda.o	275503f9aab2c921
+6	9620	1737616640393441671	/data2/vaibhav/sameer/RepKPU/models/pointops/build/temp.linux-x86_64-3.6/src/featuredistribute/featuredistribute_cuda.o	6a5917947329c99c
+5	9673	1737616640449441186	/data2/vaibhav/sameer/RepKPU/models/pointops/build/temp.linux-x86_64-3.6/src/labelstat/labelstat_cuda.o	7905dd613be88a03
+0	10097	1737616640869437558	/data2/vaibhav/sameer/RepKPU/models/pointops/build/temp.linux-x86_64-3.6/src/ballquery/ballquery_cuda.o	b4e7beb286aa467f
+2	10598	1737616641373433205	/data2/vaibhav/sameer/RepKPU/models/pointops/build/temp.linux-x86_64-3.6/src/grouping/grouping_cuda.o	69c48b224daac0f1
+4	11007	1737616641781429682	/data2/vaibhav/sameer/RepKPU/models/pointops/build/temp.linux-x86_64-3.6/src/interpolation/interpolation_cuda.o	81f35b11ce8ab4c2
+4	11106	1737616641881428818	/data2/vaibhav/sameer/RepKPU/models/pointops/build/temp.linux-x86_64-3.6/src/sampling/sampling_cuda.o	219761456b38623a
+2	11257	1737616642029427541	/data2/vaibhav/sameer/RepKPU/models/pointops/build/temp.linux-x86_64-3.6/src/knnquery_heap/knnquery_heap_cuda.o	9e7d5fc103d2a2f6
+1	11447	1737616642221425883	/data2/vaibhav/sameer/RepKPU/models/pointops/build/temp.linux-x86_64-3.6/src/knnquery/knnquery_cuda.o	b131d5011430f84b
+6	17948	1737616648709369952	/data2/vaibhav/sameer/RepKPU/models/pointops/build/temp.linux-x86_64-3.6/src/featuredistribute/featuredistribute_cuda_kernel.o	f61f4cb38a5bc821
+4	19713	1737616650477354738	/data2/vaibhav/sameer/RepKPU/models/pointops/build/temp.linux-x86_64-3.6/src/interpolation/interpolation_cuda_kernel.o	30b2ef0f63e198ae
+3	20344	1737616651113349267	/data2/vaibhav/sameer/RepKPU/models/pointops/build/temp.linux-x86_64-3.6/src/grouping/grouping_cuda_kernel.o	6d834cf0aba30954
+1	20624	1737616651389346894	/data2/vaibhav/sameer/RepKPU/models/pointops/build/temp.linux-x86_64-3.6/src/ballquery/ballquery_cuda_kernel.o	66928c2387b49542
+1	21091	1737616651853342904	/data2/vaibhav/sameer/RepKPU/models/pointops/build/temp.linux-x86_64-3.6/src/knnquery/knnquery_cuda_kernel.o	6382c58a7a7bcd
+6	21888	1737616652653336028	/data2/vaibhav/sameer/RepKPU/models/pointops/build/temp.linux-x86_64-3.6/src/labelstat/labelstat_cuda_kernel.o	4f36f853f3ef1f4b
+2	22169	1737616652933333622	/data2/vaibhav/sameer/RepKPU/models/pointops/build/temp.linux-x86_64-3.6/src/knnquery_heap/knnquery_heap_cuda_kernel.o	2a848b13e15f5dd6
+3	22352	1737616653125331972	/data2/vaibhav/sameer/RepKPU/models/pointops/build/temp.linux-x86_64-3.6/src/grouping_int/grouping_int_cuda_kernel.o	1447f1a359b2f733
+5	22378	1737616653145331800	/data2/vaibhav/sameer/RepKPU/models/pointops/build/temp.linux-x86_64-3.6/src/sampling/sampling_cuda_kernel.o	eec6dd56a83d1f8a
+0	27398	1737616658153288817	/data2/vaibhav/sameer/RepKPU/models/pointops/build/temp.linux-x86_64-3.6/src/pointops_api.o	4f3682f2cc466e1a

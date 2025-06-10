@@ -2,11 +2,13 @@ import torch
 import torch.nn as nn
 import math
 from einops import repeat
-from models.utils import get_knn_pts, index_points
+from models.utils import *
 from models.kernel_points.kernel_utils import load_kernels
 import torch.nn.functional as F
+from glob import glob
 
-# RepKPoints Extraction Module, REM
+
+# Representative KPoints Extraction Module, REM
 class REM(nn.Module):
     def __init__(self, cfgs, is_deform = True, need_repkpoints = True):
         super().__init__()
@@ -21,6 +23,12 @@ class REM(nn.Module):
         self.is_kp_bn = cfgs.is_kp_bn
         self.need_repkpoints = need_repkpoints
         self.is_deform = is_deform
+
+
+
+        #Pose addition
+        self.pose = PosE_Initial(in_dim=3, out_dim=6, alpha=100, beta=500)
+        self.pose_fc = nn.Linear(70, 64)
 
         kernel_point = torch.Tensor(load_kernels(self.kernel_radius, self.num_kernel_points, 1, 3, 'center')).squeeze(0).permute(1,0).contiguous()  # 3, nkp
         self.kp_pos = nn.Parameter(kernel_point, requires_grad=False) #3, nkp
@@ -104,6 +112,15 @@ class REM(nn.Module):
         return offset, neighbor_pos, neighbor_idx
 
     def forward(self, pos, feat):
+        #------------------------------------------------------------------------------------------------#
+        #adding pose
+        pos_embed = self.pose(pos)  # [B, dim, N]
+        feat = torch.cat((feat, pos_embed), dim=1)
+        feat = feat.permute(0, 2, 1)  # [B, in_dim + pose_dim, N]
+        feat = self.pose_fc(feat)
+        feat = feat.permute(0, 2, 1)
+        #------------------------------------------------------------------------------------------------#
+
         deform_offset, rel_neighbor_pos, neighbor_idx = self.forward_deform(pos, feat) # (B, 3, N, nkp) (B, 3, N, k) (B, N, k)
         B, _, N = pos.shape
         neighbor_feat = self.index_points(self.conv_begin(feat), neighbor_idx, pad_inf=False) # (B, N, K, d_in)
@@ -255,6 +272,11 @@ class KGM(nn.Module):
         self.is_kp_bias = cfgs.is_kp_bias
         self.is_kp_bn = cfgs.is_kp_bn
 
+        self.pose = PosE_Initial(in_dim=3, out_dim=6, alpha=100, beta=500)
+        self.pose_fc = nn.Linear(70, 64)
+
+
+
         self.query_pos = nn.Parameter(torch.Tensor(load_kernels(self.kernel_radius, self.r+1, 1, 3, 'center')).squeeze(0).permute(1,0).contiguous().view(1,3,1,self.r+1), requires_grad=False)  # 1, 3, 1, r+1
         self.conv_begin_query = nn.Conv1d(self.dim, self.dim, 1)
         self.kp_weight_query = nn.Parameter(torch.zeros(size=(self.r+1, self.dim, self.dim))) # nkp, d_in, d_h
@@ -279,6 +301,14 @@ class KGM(nn.Module):
         
     def forward(self, pos, feat):
         B, _, N = pos.shape
+
+    #-------------------------------------------------------------------------------------------------#
+        pos_embed = self.pose(pos)
+        feat = torch.cat((feat, pos_embed), dim=1)
+        feat = feat.permute(0, 2, 1)  # [B, in_dim + pose_dim, N]
+        feat = self.pose_fc(feat)
+        feat = feat.permute(0, 2, 1)
+    #-------------------------------------------------------------------------------------------------#
         pos_flipped = pos.permute(0,2,1).contiguous() # B, N, 3
         neighbor_idx = self.query_ball_point(pos_flipped, pos_flipped, self.conv_radius) # (B, N, K)
         neighbor_pos = self.index_points(pos, neighbor_idx, pad_inf=True).permute(0,3,1,2).contiguous() # (B, 3, N, K)
